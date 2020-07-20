@@ -1,0 +1,41 @@
+{% extends 'common.html' %}
+
+{% block aravind %}
+    <style>
+    #fm
+    {
+        text-align: center;
+    }
+    #bu
+    {
+        text-align: center;
+    }
+    #stu
+    {
+        background-color: wheat;
+        color: black;
+        text-align: center;
+        font-size: 30px;
+    }
+
+</style>
+{% include 'studentmenu.html' %}
+    <form action="{% url 'save_reg' %}" method="post">
+    {% csrf_token %}
+    <table border="2" align="center">
+    <tr>
+        <th id="stu" colspan="2">Student Registration Page</th>
+    </tr>
+    <tr><th id="fm">
+    {{ form.as_table }}
+    </th></tr>
+    <tr>
+        <th id="bu" colspan="2">
+            <button type="submit">
+            Register
+                </button>
+        </th>
+    </tr>
+    </table>
+    </form>
+{% endblock %}

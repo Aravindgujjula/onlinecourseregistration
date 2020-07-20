@@ -1,0 +1,43 @@
+{% extends 'student_home.html' %}
+{% block aravind1 %}
+    <style>
+    #titl
+    {
+        text-align: center;
+        background-color: crimson;
+        color: cornsilk;
+        font-size: 30px;
+    }
+    .no
+    {
+        background-color: moccasin;
+        color: green;
+        text-align: center;
+    }
+    </style>
+    <table align="center" border="2">
+    <tr>
+        <th colspan="6" id="titl">
+            Enrolled courses
+        </th>
+    </tr>
+        <tr>
+            <th class="no">Name</th>
+            <th class="no">faculty</th>
+            <th class="no">Date</th>
+            <th class="no">Time</th>
+            <th class="no">Fee</th>
+            <th class="no">Duration</th>
+        </tr>
+        {% for data in form %}
+        <tr>
+            <th><input type="number" value="{{ data.course_name }}"></th>
+            <th><input type="text" value="{{ data.faculty }}"></th>
+            <th><input type="text" value="{{ data.date }}"></th>
+            <th><input type="text" value="{{ data.time }}"></th>
+            <th><input type="number" value="{{ data.fee }}"></th>
+            <th><input type="text" value="{{ data.duration }}"></th>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

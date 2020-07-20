@@ -1,0 +1,45 @@
+{% extends 'dummy.html' %}
+{% block aravind %}
+    <style>
+    #tit
+    {
+        background-color: darkcyan;
+        color: black;
+        text-align: center;
+        font-size: 15px;
+    }
+    </style>
+    {% include 'admin_menu.html' %}
+    <form action="{% url 'save_class' %}" method="POST">
+    {% csrf_token %}
+    <table align="center" border="0">
+        <tr>
+            <th colspan="2" id="tit">
+                Schedule New Course
+            </th>
+        </tr>
+        <tr>
+            <th>
+                {{ form.as_table }}
+            </th>
+        </tr>
+        <tr>
+            <th colspan="2" style="text-align: center;">
+                <button type="submit" class="btn btn-dark">Register</button>
+            </th>
+        </tr>
+        {% for x in messages %}
+            <tr>
+                <th>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{ x }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                </th>
+            </tr>
+        {% endfor %}
+    </table>
+    </form>
+{% endblock %}

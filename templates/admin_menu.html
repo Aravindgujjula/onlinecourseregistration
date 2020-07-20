@@ -1,0 +1,16 @@
+{% load static %}
+<style>
+    .menu
+    {
+        background-color: moccasin;
+        color: black;
+        text-align: center;
+    }
+</style>
+<table align="center" border="0" width="500">
+    <tr>
+        <th class="menu"><a href="{% url 'schedule_class' %}"> Schedule New Class</a></th>
+        <th class="menu"><a href="{% url 'View_all' %}">View All Scheduled Classes</a></th>
+        <th class="menu"><a href="{% url 'admin_login' %}">Logout</a></th>
+    </tr>
+</table>

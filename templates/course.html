@@ -1,0 +1,42 @@
+{% extends 'common.html' %}
+{% load static %}
+{% block aravind %}
+    {% include 'studentmenu.html' %}
+    <style>
+    .no
+    {
+        background-color: moccasin;
+        color: green;
+        text-align: center;
+    }
+    </style>
+    <table align="center" border="0">
+    <tr><th><h1 style="background-color: red;color: wheat;text-align: center;font-size: 30px;"> All AvailableCourses</h1></th></tr>
+        <tr>
+            <th colspan="3">
+                <table align="center" border="2" width="800">
+                        <tr>
+                            <th class="no">Name</th>
+                            <th class="no">Faculty</th>
+                            <th class="no">Date</th>
+                            <th class="no">Time</th>
+                            <th class="no">Fee</th>
+                            <th class="no">Duration</th>
+                        </tr>
+                    {% for x in data %}
+                        <tr>
+                            <th>{{ x.course_name }}</th>
+                            <th>{{ x.faculty }}</th>
+                            <th>{{ x.date }}</th>
+                            <th>{{ x.time }}</th>
+                            <th>{{ x.fee }}</th>
+                            <th>{{ x.duration }}</th>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </th>
+        </tr>
+    </table>
+
+
+{% endblock %}

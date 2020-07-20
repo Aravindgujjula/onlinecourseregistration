@@ -1,0 +1,33 @@
+{% extends 'common.html' %}
+{% block aravind %}
+    {% include 'studentmenu.html' %}
+    <form action="{% url 'student_login_check' %}">
+        <table align="center" border="2">
+
+        <tr>
+            <th>
+                Username : <input type="text" placeholder="username" name="t1" required>
+            </th>
+        </tr>
+         <tr>
+            <th>
+                Password : <input type="password" placeholder="password" name="t2" required>
+            </th>
+        </tr>
+        <tr>
+            <th style="text-align: center">
+                <button type="submit">Login</button>
+            </th>
+        </tr>
+            <tr>
+                {% if messages %}
+                    <th style="text-align: center; color: red;">
+                        {% for x in messages %}
+                            {{ x }}
+                        {% endfor %}
+                    </th>
+                {% endif %}
+            </tr>
+    </table>
+    </form>
+{% endblock %}

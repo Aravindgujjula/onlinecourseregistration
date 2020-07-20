@@ -1,0 +1,41 @@
+{% extends 'common.html' %}
+{% block aravind %}
+    <style>
+        .admin
+        {
+            background-color: cadetblue;
+            color: black;
+            text-align: center;
+
+        }
+    </style>
+    <form action="{% url 'admin_login_check' %}" method="POST">
+    {% csrf_token %}
+    <table align="center" border="0" width="400">
+        <tr>
+            <th class="admin">Admin Login Page</th>
+        </tr>
+        <tr>
+            <th style="text-align: center;"><input type="text" name="t1" placeholder="Username" required></th>
+        </tr>
+        <tr>
+            <th style="text-align: center;"><input type="password" name="t2" placeholder="password" required></th>
+        </tr>
+        <tr><th style="text-align: center;"><button type="submit" class="btn btn-primary">login</button></th></tr>
+        {% if messages %}
+            <tr>
+            <th>
+            {% for x in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{ x }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+            {% endfor %}
+            </th>
+        </tr>
+        {% endif %}
+    </table>
+    </form>
+{% endblock %}
